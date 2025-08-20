@@ -24,7 +24,7 @@ li{
     border-radius: 4%;
 }
 button{
-    background-color: red;
+    background-color: gray;
 }
 .input-group{
     display: grid;
