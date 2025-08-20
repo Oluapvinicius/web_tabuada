@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>tabuada_web</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabuada Web</h1>
+        
+        <div class="input-group">
+            <input type="number" id="imput" placeholder="Digite um número de 1 a 10">
+            <button id="botao">CALCULAR TABUADA</button>
+          
+        </div>
+        
+        <ul id="lista"></ul>
+    
+    </div>
+
+    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('imput');
+            const button = document.getElementById('botao');
+            const lista = document.getElementById('lista');
+            
+            
+          
+            button.addEventListener('click', function() {
+                calcularTabuada(input, lista);
+            });
+  
+            input.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    calcularTabuada(input, lista);
+                }
+            });
+            
+            function calcularTabuada(input, lista) {
+          
+
+                const numero = parseInt(input.value)
+
+                lista.innerHTML = ''
+                
+           
+                for (let i = 0; i <= 10; i++) {
+                    const resultado = numero * i
+                    
+                    const item = document.createElement('li')
+                    
+                    const tabuadaItem = document.createElement('div')
+                    tabuadaItem.className = 'tabuada-item'
+                    
+                    const esprecao = document.createElement('span')
+                    esprecao.className = 'esprecao'
+                    esprecao.textContent = `${numero} × ${i} = ${resultado}`
+                    
+                    const resultad = document.createElement('span')
+                    resultad.className = 'resultados'
+                    //resultad.textContent = resultado
+                    
+                    tabuadaItem.appendChild(esprecao)
+                    tabuadaItem.appendChild(resultad)
+                    
+                    item.appendChild(tabuadaItem)
+                    lista.appendChild(item)
+                }
+            }
+        });
+    </script>
+</body>
+</html>

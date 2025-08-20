@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+
+}
+li{
+    list-style: none;
+}
+.container{
+    display: grid;
+    background-color: #f5f5f5;
+    height: 500px;
+    width: 250px;
+    padding: 15px 15px;
+    border: 2px solid black;
+}
+button{
+    background-color: red;
+}
+.input-group{
+    display: grid;
+    justify-content: center;
+    height: 30px;
+    gap: 5px;
+}
